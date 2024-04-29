@@ -145,14 +145,15 @@ for (let i = 0; i < sudokuArray.length; i++) {
   outsideDiv.className = "row";
   sudokuArray[i].forEach((e, v) => {
     const div = document.createElement("div");
+    const input = document.createElement('input')
     if (e) {
       div.innerHTML = e;
       div.id = "cannotClick";
     } else {
-      div.innerHTML = "";
-      div.addEventListener("click", (e) => {
-        nowSudokuPoint = div;
-      });
+      div.appendChild(input)
+      // div.addEventListener("click", (e) => {
+      //   nowSudokuPoint = div;
+      // });
     }
     const side = (v + 1) % 3;
     if (side === 1) {
